@@ -1094,6 +1094,31 @@ body.dark-theme {
 .loading {
   margin: 1em auto;
   font-size: 2rem;
+  color: white;
+}
+
+.dot1 {
+  animation: dot 1.7s infinite linear;
+}
+.dot2 {
+  animation: dot 1.78s infinite linear;
+}
+.dot3 {
+  animation: dot 1.83s infinite linear;
+}
+
+@keyframes dot {
+  1% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .spinner {

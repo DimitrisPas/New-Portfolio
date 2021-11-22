@@ -165,7 +165,7 @@ window.addEventListener("load", () => {
     spinnerWrapper.style.display = "none";
     body.style.overflow = "visible";
     body.classList.add("fade-in");
-  }, 2000);
+  }, 4000);
 });
 
 history.scrollRestoration = "manual";
