@@ -1,6 +1,7 @@
 const navMenu = document.getElementById("nav-menu");
 const navToggle = document.getElementById("nav-toggle");
 const navClose = document.getElementById("nav-close");
+let body = document.getElementById("body");
 
 if (navToggle) {
   navToggle.addEventListener("click", function () {
@@ -48,6 +49,7 @@ const modalClose = document.querySelectorAll(".services__modal-close");
 
 let modal = function (modalClick) {
   modalViews[modalClick].classList.add("active-modal");
+  body.style.overflow = "hidden";
 };
 
 modalBtns.forEach((modalBtn, i) => {
@@ -60,6 +62,7 @@ modalClose.forEach((mod) => {
   mod.addEventListener("click", function () {
     modalViews.forEach((modalView) => {
       modalView.classList.remove("active-modal");
+      body.style.overflow = "visible";
     });
   });
 });
@@ -158,7 +161,6 @@ themeButton.addEventListener("click", () => {
 });
 
 let spinnerWrapper = document.querySelector(".spinner-wrapper");
-let body = document.getElementById("body");
 
 window.addEventListener("load", () => {
   setTimeout(function () {
