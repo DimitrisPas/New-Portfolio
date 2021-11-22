@@ -156,3 +156,20 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+let spinnerWrapper = document.querySelector(".spinner-wrapper");
+let body = document.getElementById("body");
+
+window.addEventListener("load", () => {
+  setTimeout(function () {
+    spinnerWrapper.style.display = "none";
+    body.style.overflow = "visible";
+    body.classList.add("fade-in");
+  }, 2000);
+});
+
+history.scrollRestoration = "manual";
+
+$(window).on("beforeunload", function () {
+  $(window).scrollTop(0);
+});
