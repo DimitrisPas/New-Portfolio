@@ -1,7 +1,7 @@
 const navMenu = document.getElementById("nav-menu");
 const navToggle = document.getElementById("nav-toggle");
 const navClose = document.getElementById("nav-close");
-let body = document.getElementById("body");
+const body = document.getElementById("body");
 
 if (navToggle) {
   navToggle.addEventListener("click", function () {
@@ -121,6 +121,12 @@ function scrollUp() {
   // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
   if (this.scrollY >= 480) scrollUp.classList.add("show-scroll");
   else scrollUp.classList.remove("show-scroll");
+
+  if (window.innerHeight + this.scrollY >= document.body.offsetHeight - 255) {
+    scrollUp.style.background = "var(--first-color-alt)";
+  } else {
+    scrollUp.style.background = "var(--first-color)";
+  }
 }
 
 window.addEventListener("scroll", scrollUp);
@@ -154,6 +160,7 @@ if (selectedTheme) {
 themeButton.addEventListener("click", () => {
   // Add or remove the dark / icon theme
   document.body.classList.toggle(darkTheme);
+
   themeButton.classList.toggle(iconTheme);
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());

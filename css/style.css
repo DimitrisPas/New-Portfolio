@@ -85,6 +85,12 @@ body {
   color: var(--text-color);
   line-height: 1.8;
   overflow: hidden;
+  letter-spacing: 0.05em;
+}
+
+body,
+header {
+  transition: background 0.9s ease-in-out;
 }
 
 h1,
@@ -340,6 +346,7 @@ img {
   border-radius: 0.5rem;
   justify-self: center;
   align-self: center;
+  animation: bounce 2s infinite linear;
 }
 
 .about__description {
@@ -720,6 +727,7 @@ img {
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
+  justify-content: center;
 }
 
 .footer__link:hover {
@@ -1171,5 +1179,29 @@ body.dark-theme {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
